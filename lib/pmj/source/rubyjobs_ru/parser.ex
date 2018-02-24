@@ -1,28 +1,24 @@
-defmodule Pmj.Parsers.Rubyjobsru do
-  @site_url "https://www.rubyjobs.ru"
+defmodule Pmj.Source.RubyjobsRu.Parser do
   @max_id 5387
 
   defstruct url: '', title: '', salary: '', description: '', company: '', contact_info: ''
 
   def parse do
-    HTTPoison.start
-
     5387..@max_id
     |> Enum.to_list
     |> Enum.map(fn id -> parse_page(id) end)
   end
 
+  @spec parse_page(integer) :: %Pmj.Source.RubyjobsRu.Parser{}
   def parse_page(id) do
-    page_url = @site_url <> "/vacancies/" <> Integer.to_string(id)
-    resp = HTTPoison.get!(page_url)
-    html = resp.body
+    {:ok, url, html} = Pmj.Source.RubyjobsRu.Client.get_vacancy(id)
 
-    %Pmj.Parsers.Rubyjobsru{
-      url: page_url,
-      title: title(html),
-      salary: salary(html),
-      description: description(html),
-      company: company(html),
+    %Pmj.Source.RubyjobsRu.Parser{
+      url:          url,
+      title:        title(html),
+      salary:       salary(html),
+      description:  description(html),
+      company:      company(html),
       contact_info: contact_info(html)
     }
   end
