@@ -1,11 +1,11 @@
 defmodule Pmj.Source.RubyjobsRu.Client do
-  #use HTTPoison.Base
+  use HTTPoison.Base
+
   @site_url "https://www.rubyjobs.ru"
 
   @spec get_vacancy(integer) :: {:ok, term, %HTTPoison.Response{}}
   def get_vacancy(id) do
-    HTTPoison.start
-    {:ok, page_url(id), HTTPoison.get!(page_url(id)).body}
+    {:ok, page_url(id), get!(page_url(id)).body}
   end
 
   @spec page_url(integer) :: String.t
