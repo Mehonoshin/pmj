@@ -1,6 +1,6 @@
 ### Sources
 
-* Rubyjobs.ru
+* ~Rubyjobs.ru~
 * Github jobs
 * Linkedin jobs
 * Stackoverflow jobs
