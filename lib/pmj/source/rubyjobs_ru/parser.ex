@@ -1,9 +1,16 @@
 defmodule Pmj.Source.RubyjobsRu.Parser do
+  @moduledoc """
+  The goal of this module is to implement an interface,
+  that allows to iterate through parsed items of the website,
+  and receive information from its pages.
+  """
+
   @max_id 5387
   @client_module Application.get_env(:pmj, :rubyjobs_ru_client)
 
   defstruct url: '', title: '', salary: '', description: '', company: '', contact_info: ''
 
+  # TODO: make this collection Enum-like.
   def parse do
     5387..@max_id
     |> Enum.to_list

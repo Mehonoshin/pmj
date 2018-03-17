@@ -1,4 +1,8 @@
 defmodule Pmj.Source.RubyjobsRu.Client do
+  @moduledoc """
+  Implements Source interface
+  Allows to crawl through rubyjobs.ru website
+  """
   use HTTPoison.Base
 
   @behaviour Pmj.Source
