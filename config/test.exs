@@ -17,3 +17,5 @@ config :pmj, Pmj.Repo,
   database: "pmj_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :pmj, :rubyjobs_ru_client, Pmj.Source.RubyjobsRu.ClientMock

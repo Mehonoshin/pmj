@@ -1,9 +1,9 @@
 defmodule Pmj.Source.RubyjobsRu.Client do
   use HTTPoison.Base
 
+  @behaviour Pmj.Source
   @site_url "https://www.rubyjobs.ru"
 
-  @spec get_vacancy(integer) :: {:ok, term, %HTTPoison.Response{}}
   def get_vacancy(id) do
     {:ok, page_url(id), get!(page_url(id)).body}
   end

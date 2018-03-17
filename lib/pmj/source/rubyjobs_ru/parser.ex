@@ -1,5 +1,6 @@
 defmodule Pmj.Source.RubyjobsRu.Parser do
   @max_id 5387
+  @client_module Application.get_env(:pmj, :rubyjobs_ru_client)
 
   defstruct url: '', title: '', salary: '', description: '', company: '', contact_info: ''
 
@@ -11,7 +12,7 @@ defmodule Pmj.Source.RubyjobsRu.Parser do
 
   @spec parse_page(integer) :: %Pmj.Source.RubyjobsRu.Parser{}
   def parse_page(id) do
-    {:ok, url, html} = Pmj.Source.RubyjobsRu.Client.get_vacancy(id)
+    {:ok, url, html} = @client_module.get_vacancy(id)
 
     %Pmj.Source.RubyjobsRu.Parser{
       url:          url,

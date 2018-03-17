@@ -56,3 +56,6 @@ config :pmj, Pmj.Repo,
   database: "pmj_dev",
   hostname: "localhost",
   pool_size: 10
+
+
+config :pmj, :rubyjobs_ru_client, Pmj.Source.RubyjobsRu.Client
