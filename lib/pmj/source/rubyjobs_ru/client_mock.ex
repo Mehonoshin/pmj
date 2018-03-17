@@ -5,8 +5,6 @@ defmodule Pmj.Source.RubyjobsRu.ClientMock do
   website
   """
 
-  @behaviour Pmj.Source
-
   def get_vacancy(_) do
     {:ok, "https://www.rubyjobs.ru/vacancies/5387", html()}
   end

@@ -43,7 +43,8 @@ defmodule Pmj.Mixfile do
       {:cowboy, "~> 1.0"},
       {:httpoison, "~> 1.0"},
       {:floki, "~> 0.20.0"},
-      {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false}
+      {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false},
+      {:poison, "~> 3.1"}
     ]
   end
 

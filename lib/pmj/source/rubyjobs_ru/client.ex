@@ -12,7 +12,7 @@ defmodule Pmj.Source.RubyjobsRu.Client do
     {:ok, page_url(id), get!(page_url(id)).body}
   end
 
-  @spec page_url(integer) :: String.t
+  @spec page_url(String.t) :: String.t
   defp page_url(id) do
     @site_url <> "/vacancies/" <> Integer.to_string(id)
   end
