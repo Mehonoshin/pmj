@@ -20,7 +20,7 @@ defmodule Pmj.Mixfile do
   def application do
     [
       mod: {Pmj.Application, []},
-      extra_applications: [:logger, :runtime_tools, :httpoison]
+      extra_applications: [:logger, :runtime_tools, :httpoison, :"elixir_feed_parser"]
     ]
   end
 
@@ -44,7 +44,8 @@ defmodule Pmj.Mixfile do
       {:httpoison, "~> 1.0"},
       {:floki, "~> 0.20.0"},
       {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:"elixir_feed_parser", "~> 0.0.1"}
     ]
   end
 

@@ -1,13 +1,10 @@
 defmodule Pmj.Source.GithubJobs.ClientMock do
   @moduledoc """
+  Mock client for GH jobs parser.
+  Used only in tests.
   """
 
   def get_list do
-    {:ok, json}
-  end
-
-  defp json do
-    {:ok, content} = File.read "./test/fixtures/github_jobs.json"
-    content
+    File.read "./test/fixtures/github_jobs.json"
   end
 end

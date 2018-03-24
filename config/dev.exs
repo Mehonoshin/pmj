@@ -60,3 +60,4 @@ config :pmj, Pmj.Repo,
 
 config :pmj, :rubyjobs_ru_client, Pmj.Source.RubyjobsRu.Client
 config :pmj, :github_jobs_client, Pmj.Source.GithubJobs.Client
+config :pmj, :stackoverflow_jobs_client, Pmj.Source.StackoverflowJobs.Client

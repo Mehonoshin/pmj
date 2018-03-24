@@ -20,3 +20,4 @@ config :pmj, Pmj.Repo,
 
 config :pmj, :rubyjobs_ru_client, Pmj.Source.RubyjobsRu.ClientMock
 config :pmj, :github_jobs_client, Pmj.Source.GithubJobs.ClientMock
+config :pmj, :stackoverflow_jobs_client, Pmj.Source.StackoverflowJobs.ClientMock
