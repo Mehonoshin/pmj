@@ -43,7 +43,7 @@ defmodule Pmj.Mixfile do
       {:cowboy, "~> 1.0"},
       {:httpoison, "~> 1.0"},
       {:floki, "~> 0.20.0"},
-      {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false},
+      {:credo, github: "rrrene/credo"},
       {:poison, "~> 3.1"},
       {:"elixir_feed_parser", "~> 0.0.1"}
     ]

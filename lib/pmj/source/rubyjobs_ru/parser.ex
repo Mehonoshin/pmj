@@ -8,8 +8,6 @@ defmodule Pmj.Source.RubyjobsRu.Parser do
   @max_id 5387
   @client_module Application.get_env(:pmj, :rubyjobs_ru_client)
 
-  defstruct url: '', title: '', salary: '', description: '', company: '', contact_info: ''
-
   # TODO: make this collection Enum-like.
   def parse do
     5387..@max_id
@@ -17,17 +15,17 @@ defmodule Pmj.Source.RubyjobsRu.Parser do
     |> Enum.map(fn id -> parse_page(id) end)
   end
 
-  @spec parse_page(integer) :: %Pmj.Source.RubyjobsRu.Parser{}
+  @spec parse_page(integer) :: %Pmj.Source.JobEntry{}
   def parse_page(id) do
     {:ok, url, html} = @client_module.get_vacancy(id)
 
-    %Pmj.Source.RubyjobsRu.Parser{
-      url:          url,
-      title:        title(html),
-      salary:       salary(html),
-      description:  description(html),
-      company:      company(html),
-      contact_info: contact_info(html)
+    %Pmj.Source.JobEntry{
+      url:         url,
+      title:       title(html),
+      salary:      salary(html),
+      description: description(html),
+      company:     company(html),
+      company_url: contact_info(html)
     }
   end
 
