@@ -5,4 +5,8 @@ defmodule Pmj.Source do
   """
 
   @doc "Returns page data"
+
+  def get_records do
+
+  end
 end

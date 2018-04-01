@@ -2,6 +2,7 @@ defmodule Pmj.Source.GithubJobs.Parser do
   @moduledoc """
   """
 
+  @behaviour Pmj.Source
   @derive [Poison.Encoder]
   @client_module Application.get_env(:pmj, :github_jobs_client)
 

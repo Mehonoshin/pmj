@@ -3,6 +3,8 @@ defmodule Pmj.Source.StackoverflowJobs.Parser do
   This module gets an XML representation of SO jobs
   parses the feed and deserializes it to the JobEntry struct
   """
+  @behaviour Pmj.Source
+
   @client_module Application.get_env(:pmj, :stackoverflow_jobs_client)
 
   defstruct url: '', title: '', tags: [], date: nil, description: ''

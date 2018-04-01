@@ -5,6 +5,8 @@ defmodule Pmj.Source.RubyjobsRu.Parser do
   and receive information from its pages.
   """
 
+  @behaviour Pmj.Source
+
   @max_id 5387
   @client_module Application.get_env(:pmj, :rubyjobs_ru_client)
 
